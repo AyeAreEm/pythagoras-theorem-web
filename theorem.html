@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theorem</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: cadetblue;
+        }
+
+        input {
+            border-radius: 5px;
+            border: white;
+            width: 15%;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        h2 {
+            color: rgb(41, 41, 41);
+        }
+
+        input[type=button] {
+            background-color: rgb(68, 68, 68);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <h2>Solve the hypotenuse</h2><br>
+            <input type="text" name=a autocomplete="off" placeholder="Base"><sup>2</sup> +
+            <input type="text" name=b autocomplete="off" placeholder="Height"><sup>2</sup> =
+            <input type="text" name=c autocomplete="off">
+        </p>
+        <input type="button" value="Hypotenuse" onclick="solveC(this.form)">
+    </form>
+
+    <form>
+        <p>
+            <h2>Solve the base</h2><br>
+            <input type="text" name=a autocomplete="off" placeholder="Hypotenuse"><sup>2</sup> +
+            <input type="text" name=b autocomplete="off" placeholder="Height"><sup>2</sup> =
+            <input type="text" name=c autocomplete="off">
+        </p>
+        <input type="button" value="Base" onclick="solveB(this.form)">
+    </form>
+
+    <form>
+        <p>
+            <h2>Solve the height</h2><br>
+            <input type="text" name=a autocomplete="off" placeholder="Hypotenuse"><sup>2</sup> +
+            <input type="text" name=b autocomplete="off" placeholder="Base"><sup>2</sup> =
+            <input type="text" name=c autocomplete="off">
+        </p>
+        <input type="button" value="Height" onclick="solveA(this.form)">
+    </form>
+
+    <script>
+        function solveC(form) {
+            a = parseInt(form.a.value);
+            b = parseInt(form.b.value);
+            form.c.value = Math.sqrt(a*a + b*b);
+        }
+
+        function solveB(form) {
+            a = parseInt(form.a.value);
+            b = parseInt(form.b.value);
+            form.c.value = Math.sqrt(a*a - b*b);
+        }
+
+        function solveA(form) {
+            a = parseInt(form.a.value);
+            b = parseInt(form.b.value);
+            form.c.value = Math.sqrt(a*a - b*b);
+        }
+    </script>
+</body>
+</html>
